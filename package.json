@@ -5,21 +5,35 @@
     "#*": "./*.js"
   },
   "scripts": {
-    "start": "node --env-file=.env server.js",
-    "dev": "node --watch --env-file=.env server.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js",
     "test": "vitest",
     "test:database": "vitest database",
     "test:server": "vitest server",
     "db:schema": "psql -d filez -f db/schema.sql",
-    "db:seed": "node --env-file=.env db/seed.js",
+    "db:seed": "node db/seed.js",
     "db:reset": "npm run db:schema && npm run db:seed"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "pg": "^8.14.1"
+    "pg": "^8.16.0"
   },
   "devDependencies": {
     "supertest": "^7.1.0",
     "vitest": "^3.1.2"
-  }
+  },
+  "description": "Filez is a next-gen file management platform built for extreme speed and performance. Your folders and files have never felt snappier!",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashpy10/block37.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashpy10/block37/issues"
+  },
+  "homepage": "https://github.com/ashpy10/block37#readme"
 }

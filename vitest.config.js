@@ -1,8 +1,11 @@
-import { loadEnvFile } from "node:process";
 import { defineConfig } from "vitest/config";
+import dotenv from "dotenv";
 
-export default defineConfig(() => ({
+dotenv.config();
+
+export default defineConfig({
   test: {
-    env: loadEnvFile(),
+    globals: true,
+    environment: 'node',
   },
-}));
+});
